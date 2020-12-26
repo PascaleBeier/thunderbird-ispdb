@@ -9,6 +9,10 @@
 ## What is this?
 
 This is a static distribution of Thunderbird's ISPDB to autoconfigure Email Addresses.
+The files that you are looking for reside below [dist/](dist).
+
+This folder is kept up-to-date with GitHub Workflows, see [GitHub Workflow](.github/workflows/main.yml). Updates are released as 
+Patch Releases, e.g. v1.0.1.
 
 ### Links
 
@@ -24,11 +28,13 @@ Via Composer
 $ composer require pascalebeier/thunderbird-ispdb
 ```
 
+It is highly recommended that you `--prefer-dist` on this Repository.
+
 ## Usage
 
 ### Distribution
 
-Use the files below `dist` in your Application.
+Use the files below [dist/](dist) in your Application.
 
 ### PHP API
 

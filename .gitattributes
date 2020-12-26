@@ -8,3 +8,4 @@
 /.version                    export-ignore
 /phpcs.xml.dist              export-ignore
 /bin                         export-ignore
+/.github                     export-ignore
