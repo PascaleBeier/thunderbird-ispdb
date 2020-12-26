@@ -40,6 +40,9 @@
         "check-style": "phpcs src bin",
         "fix-style": "phpcbf src bin"
     },
+    "require": {
+        "php": ">=7.1"
+    },
     "require-dev": {
         "php": ">=7.4",
         "symfony/console": "^5.2",
