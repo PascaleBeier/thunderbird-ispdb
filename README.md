@@ -1,6 +1,7 @@
 # thunderbird-ispdb
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
+[![PHP Version Support][ico-php]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Total Downloads][ico-downloads]][link-downloads]
 
@@ -56,6 +57,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-version]: https://img.shields.io/packagist/v/pascalebeier/thunderbird-ispdb.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/pascalebeier/thunderbird-ispdb.svg?style=flat-square
+[ico-php]: https://img.shields.io/packagist/php-v/pascalebeier/thunderbird-ispdb.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/pascalebeier/thunderbird-ispdb
 [link-downloads]: https://packagist.org/packages/pascalebeier/thunderbird-ispdb
