@@ -1,0 +1,60 @@
+name: Update Distribution
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    outputs:
+      status: ${{ steps.verify.conclusion }}
+
+    steps:
+      # Setup Project w/ composer
+      - uses: "actions/checkout@v2"
+      - uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "7.4"
+      - uses: "ramsey/composer-install@v1"
+        with:
+          composer-options: "--prefer-source --ignore-platform-reqs"
+
+      # Verify Current Ref, returns 0 if up to date
+      - name: Verify current Ref
+        id: verify
+        run: php bin/console ispdb:verify
+        continue-on-error: true
+  
+  update:
+    needs: verify
+    runs-on: ubuntu-latest
+    if: needs.verify.outputs.status == 'failure'
+    
+    steps:
+      - name: Update Distribution
+        run: php bin/console ispdb:update
+        
+      - name: Add changes to Git tracking
+        run: git add -A .
+
+      - name: Commit changes
+        uses: "gha-utilities/workspace-commit@v0.0.3"
+        with:
+          message: Update Distribution
+          all: true
+        
+      - id: compute_tag
+        uses: craig-day/compute-tag@v10
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          version_scheme: semantic
+          version_type: patch
+      
+      - name: Push changes
+        uses: "ad-m/github-push-action@master"
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          tags: true
+      
