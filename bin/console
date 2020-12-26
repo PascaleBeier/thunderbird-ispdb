@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+if (!in_array(PHP_SAPI, ['cli', 'phpdbg', 'embed'], true)) {
+echo 'Warning: The console should be invoked via the CLI version of PHP, not the '.PHP_SAPI.' SAPI'.PHP_EOL;
+}
+
+set_time_limit(0);
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use PascaleBeier\ThunderbirdIspdb\Command\UpdateCommand;
+use PascaleBeier\ThunderbirdIspdb\Command\VerifyCommand;
+
+$application = new Application();
+
+$application->addCommands([
+    new UpdateCommand(),
+    new VerifyCommand(),
+]);
+
+$application
+    ->setDefaultCommand(VerifyCommand::getDefaultName())
+    ->run();
