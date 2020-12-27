@@ -66,7 +66,7 @@ class UpdateCommand extends Command
             unlink($file);
         }
 
-        $cmd = new Process(['tar', '-xzf', $tmpFile, '--strip-components=2', '-C', 'dist']);
+        $cmd = new Process(['tar', '-xzf', $tmpFile, '--strip-components=2', '-C', 'dist', '--exclude=*.json']);
         $cmd->start();
 
         while ($cmd->isRunning()) {
