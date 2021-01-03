@@ -45,14 +45,12 @@ jobs:
       - name: Update Distribution
         run: php bin/console ispdb:update
         
-      - name: Add and Commit changes
       - uses: EndBug/add-and-commit@master
         with:
           message: Update Distribution
           push: false
         
-      - id: compute_tag
-        uses: craig-day/compute-tag@v10
+      - uses: craig-day/compute-tag@v10
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           version_scheme: semantic
