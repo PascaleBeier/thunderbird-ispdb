@@ -47,10 +47,10 @@ jobs:
         run: git add -A .
 
       - name: Commit changes
-        uses: "gha-utilities/workspace-commit@v0.0.3"
+      - uses: EndBug/add-and-commit@master
         with:
           message: Update Distribution
-          all: true
+          push: false
         
       - id: compute_tag
         uses: craig-day/compute-tag@v10
