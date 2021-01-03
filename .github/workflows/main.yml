@@ -20,6 +20,7 @@ jobs:
       - uses: "ramsey/composer-install@v1"
         with:
           composer-options: "--prefer-source --ignore-platform-reqs"
+          dependency-versions: "highest"  
 
       # Verify Current Ref, returns 0 if up to date
       - name: Verify current Ref
@@ -40,13 +41,11 @@ jobs:
       - uses: "ramsey/composer-install@v1"
         with:
           composer-options: "--prefer-source --ignore-platform-reqs"
+          dependency-versions: "highest"
       - name: Update Distribution
         run: php bin/console ispdb:update
         
-      - name: Add changes to Git tracking
-        run: git add -A .
-
-      - name: Commit changes
+      - name: Add and Commit changes
       - uses: EndBug/add-and-commit@master
         with:
           message: Update Distribution
