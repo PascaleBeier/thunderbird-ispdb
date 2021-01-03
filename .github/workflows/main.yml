@@ -9,9 +9,6 @@ jobs:
   verify:
     runs-on: ubuntu-20.04
 
-    outputs:
-      status: ${{ steps.verify.conclusion }}
-
     steps:
       # Setup Project w/ composer
       - uses: "actions/checkout@v2"
@@ -31,7 +28,7 @@ jobs:
   update:
     needs: verify
     runs-on: ubuntu-20.04
-    if: needs.verify.outputs.status == 'failure'
+    if: ${{ failure() }}
     
     steps:
       - name: Update Distribution
