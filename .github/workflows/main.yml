@@ -31,6 +31,7 @@ jobs:
   update:
     needs: verify
     runs-on: ubuntu-20.04
+    # Only runs if Repository is outdated
     if: needs.verify.outputs.verification == 'failure'
     
     steps:
@@ -45,21 +46,17 @@ jobs:
       - name: Update Distribution
         run: php bin/console ispdb:update
         
-      - uses: EndBug/add-and-commit@master
-        with:
-          message: Update Distribution
-          push: false
-        
-      - uses: craig-day/compute-tag@v10
+      - name: Determine next Tag
+        id: compute_tag
+        uses: craig-day/compute-tag@v10
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           version_scheme: semantic
           version_type: patch
-      
-      - name: Push changes
-        uses: "ad-m/github-push-action@master"
+        
+      - name: Publish Release
+        uses: EndBug/add-and-commit@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
-          tags: true
+          message: Update Distribution
+          tag: ${{ steps.compute_tag.outputs.next_tag }}
       
