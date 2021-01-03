@@ -8,6 +8,8 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-20.04
+    outputs: 
+       verification: ${{ steps.verify.exitcode }}  
 
     steps:
       # Setup Project w/ composer
@@ -28,7 +30,7 @@ jobs:
   update:
     needs: verify
     runs-on: ubuntu-20.04
-    if: ${{ failure() }}
+    if: ${{ needs.verify.exitcode == 1 }}
     
     steps:
       - name: Update Distribution
