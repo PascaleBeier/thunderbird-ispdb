@@ -2,14 +2,14 @@ name: Update Distribution
 
 on:
   workflow_dispatch:
-  schedule: 
+  schedule:
     - cron: '0 0 * * *'
 
 jobs:
   verify:
     runs-on: ubuntu-20.04
-    outputs: 
-       verification: ${{ steps.verify.outcome }}  
+    outputs:
+       verification: ${{ steps.verify.outcome }}
 
     steps:
       # Setup Project w/ composer
@@ -20,20 +20,20 @@ jobs:
       - uses: "ramsey/composer-install@v1"
         with:
           composer-options: "--prefer-source --ignore-platform-reqs"
-          dependency-versions: "highest"  
+          dependency-versions: "highest"
 
-      # Verify Current Ref, returns 0 if up to date
+      # Verify Current Ref, returns 0 if Repository up to date
       - name: Verify current Ref
         id: verify
         run: php bin/console ispdb:verify
         continue-on-error: true
-  
+
   update:
     needs: verify
     runs-on: ubuntu-20.04
     # Only runs if Repository is outdated
     if: needs.verify.outputs.verification == 'failure'
-    
+
     steps:
       - uses: "actions/checkout@v2"
       - uses: "shivammathur/setup-php@v2"
@@ -45,7 +45,7 @@ jobs:
           dependency-versions: "highest"
       - name: Update Distribution
         run: php bin/console ispdb:update
-        
+
       - name: Determine next Tag
         id: compute_tag
         uses: craig-day/compute-tag@v10
@@ -53,10 +53,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           version_scheme: semantic
           version_type: patch
-        
+
       - name: Publish Release
         uses: EndBug/add-and-commit@master
         with:
           message: Update Distribution
           tag: ${{ steps.compute_tag.outputs.next_tag }}
-      
+
