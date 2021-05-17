@@ -39,7 +39,7 @@ Use the files below [dist/](dist) in your Application.
 
 ### PHP API
 
-This Library provides a Single Interface as a shortcut to retrieve the `dist` directory:
+As of now, this Library provides a Single Interface as a shortcut to retrieve the `dist` directory:
 
 ``` php
 print_r(PascaleBeier\ThunderbirdIspdb\Ispdb::DIR); 
