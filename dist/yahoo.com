@@ -14,6 +14,10 @@
     <domain>yahoo.com.mx</domain>
     <domain>ymail.com</domain>
     <domain>rocketmail.com</domain>
+    <!-- MX -->
+    <domain>mail.am0.yahoodns.net</domain>
+    <domain>am0.yahoodns.net</domain>
+    <!-- Unfortunately, also used for AOL :-( -->
     <domain>yahoodns.net</domain>
     <displayName>Yahoo! Mail</displayName>
     <displayShortName>Yahoo</displayShortName>
