@@ -55,7 +55,7 @@ jobs:
           version_type: patch
 
       - name: Publish Release
-        uses: EndBug/add-and-commit@v8
+        uses: EndBug/add-and-commit@v9
         with:
           message: Update Distribution
           tag: ${{ steps.compute_tag.outputs.next_tag }}
