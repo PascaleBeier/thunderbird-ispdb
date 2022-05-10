@@ -48,7 +48,7 @@ jobs:
 
       - name: Determine next Tag
         id: compute_tag
-        uses: craig-day/compute-tag@v13
+        uses: craig-day/compute-tag@v14
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           version_scheme: semantic
