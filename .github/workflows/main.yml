@@ -46,17 +46,7 @@ jobs:
       - name: Update Distribution
         run: php bin/console ispdb:update
 
-      - name: Determine next Tag
-        id: compute_tag
-        uses: craig-day/compute-tag@v14
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          version_scheme: semantic
-          version_type: patch
-
       - name: Publish Release
         uses: EndBug/add-and-commit@v9
         with:
-          message: Update Distribution
-          tag: ${{ steps.compute_tag.outputs.next_tag }}
-
+          message: fix: Update Distribution

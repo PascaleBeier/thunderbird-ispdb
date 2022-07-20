@@ -1,22 +1,12 @@
-name: Create Release
-
-on: ['push']
-      
+on:
+  push:
+    branches:
+      - main
+name: release-please
 jobs:
-  build:
-    name: Create Release
+  release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+      - uses: google-github-actions/release-please-action@v3
         with:
-          token: ${{ secrets.PAT }}
-          tag_name: ${{ github.ref }}
-          body: |
-            Release ${{ github.ref }}
-            
-            This is a Patch Release with no Breaking Changes.
-          draft: false
-          prerelease: false
+          command: manifest
