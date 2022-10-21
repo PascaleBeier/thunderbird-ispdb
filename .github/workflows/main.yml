@@ -49,4 +49,4 @@ jobs:
       - name: Publish Release
         uses: EndBug/add-and-commit@v9
         with:
-          message: fix: Update Distribution
+          message: "chore(ci): Update Distribution"
