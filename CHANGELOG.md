@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.12](https://github.com/PascaleBeier/thunderbird-ispdb/compare/v1.0.11...v1.0.12) (2022-10-21)
+
+
+### Bug Fixes
+
+* **ci:** Configure Automerge ([43dee32](https://github.com/PascaleBeier/thunderbird-ispdb/commit/43dee32e87e4ea30a3bba52bbffb5aceabeb1883))
+* **ci:** Supply correct token ([0d3dbe1](https://github.com/PascaleBeier/thunderbird-ispdb/commit/0d3dbe1e61caa69ca12af717df5fdd5c7ad3bb44))
+* **ci:** Supply Token ([f34148b](https://github.com/PascaleBeier/thunderbird-ispdb/commit/f34148bdd5c167200193af3ada0e6bf0e84e473e))
+* **ci:** Update Distribution ([0daafa1](https://github.com/PascaleBeier/thunderbird-ispdb/commit/0daafa1917b4b36133cb17bac56aabfd84ad8cd9))
+
 ## [1.0.11](https://github.com/PascaleBeier/thunderbird-ispdb/compare/v1.0.10...v1.0.11) (2022-10-21)
 
 
