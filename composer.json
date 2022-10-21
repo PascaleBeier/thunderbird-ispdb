@@ -3,7 +3,6 @@
     "type": "library",
     "description": "Auto-generated ISPDB distribution from Thunderbird for PHP Applications.",
     "keywords": [
-        "pascalebeier",
         "thunderbird-ispdb",
         "autoconfig",
         "ispdb",
