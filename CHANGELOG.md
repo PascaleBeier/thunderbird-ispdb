@@ -23,5 +23,3 @@
 ### Bug Fixes
 
 * **ci:** Update Release Strategy ([3760910](https://github.com/PascaleBeier/thunderbird-ispdb/commit/376091040d7b856514b1d5f226408d8347262439))
-
-## Changelog
