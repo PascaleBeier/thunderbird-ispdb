@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.14](https://github.com/PascaleBeier/thunderbird-ispdb/compare/v1.0.13...v1.0.14) (2022-11-01)
+
+
+### Bug Fixes
+
+* **deps:** Update symfony packages to v6.1.7 ([24ed7a7](https://github.com/PascaleBeier/thunderbird-ispdb/commit/24ed7a7ce647f83033ac50f58a655130f8fd6b29))
+
 ## [1.0.13](https://github.com/PascaleBeier/thunderbird-ispdb/compare/v1.0.12...v1.0.13) (2022-10-27)
 
 
