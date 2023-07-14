@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.29](https://github.com/PascaleBeier/thunderbird-ispdb/compare/v1.0.28...v1.0.29) (2023-07-14)
+
+
+### Bug Fixes
+
+* **ci:** Update Distribution ([937705e](https://github.com/PascaleBeier/thunderbird-ispdb/commit/937705ede45ebf1f4771eb88d33b8e70f48d76b4))
+
 ## [1.0.28](https://github.com/PascaleBeier/thunderbird-ispdb/compare/v1.0.27...v1.0.28) (2023-05-30)
 
 
