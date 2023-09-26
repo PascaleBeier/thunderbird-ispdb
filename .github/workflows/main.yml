@@ -13,7 +13,7 @@ jobs:
 
     steps:
       # Setup Project w/ composer
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: "shivammathur/setup-php@v2"
         with:
           php-version: "8.1"
@@ -35,7 +35,7 @@ jobs:
     if: needs.verify.outputs.verification == 'failure'
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.PAT }} 
       - uses: "shivammathur/setup-php@v2"
