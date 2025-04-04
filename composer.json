@@ -47,6 +47,6 @@
         "symfony/console": "6.4.1",
         "symfony/http-client": "6.4.0",
         "symfony/process": "6.4.0",
-        "squizlabs/php_codesniffer": "3.8.0"
+        "squizlabs/php_codesniffer": "3.12.1"
     }
 }
